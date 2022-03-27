@@ -1,6 +1,6 @@
 # NI-DAQmx-Tutorial
 
-### 0. Information: 
+## 0. Information: 
 
 **Author:** National Instruments
 
@@ -14,7 +14,7 @@
 * [NI Hardware and Operating System Compatibility](https://www.ni.com/r/hw-support) for which versions of the driver support your hardware on a given operating system.( Win and Linux )
 * https://www.ni.com/documentation/en/ni-daqmx/20.1/manual/manual-overview/ (Given by Sen Yang )
 
-### 1. Installation
+## 1. Installation
 
 * Running **nidaqmx** requires NI-DAQmx or NI-DAQmx Runtime.
 
@@ -32,7 +32,7 @@
   $ python -m pip list
   ````
 
-### 2. Additional Documentation 
+## 2. Additional Documentation 
 
 * Refer to the [NI-DAQmx Help](http://digital.ni.com/express.nsf/bycode/exagg4) for API-agnostic information about NI-DAQmx or measurement concepts.
 
