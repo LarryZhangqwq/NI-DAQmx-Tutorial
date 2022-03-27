@@ -12,7 +12,7 @@
 * [ni.com/downloads](http://www.ni.com/downloads/) to upgrade your version of NI-DAQmx.
 
 * [NI Hardware and Operating System Compatibility](https://www.ni.com/r/hw-support) for which versions of the driver support your hardware on a given operating system.( Win and Linux )
-* https://www.ni.com/documentation/en/ni-daqmx/20.1/manual/manual-overview/ (Given by Sen Yang )
+* https://www.ni.com/documentation/en/ni-daqmx/20.1/manual/manual-overview/ ( Given by Sen Yang )
 
 ## 1. Installation
 
@@ -23,7 +23,7 @@
 * Can also be installed **nidaqmx** with pip:
 
   ````
-  $ python -m pip install nidamx
+  $ python -m pip install nidaqmx
   ````
 
 * The versions of the **nidaqmx**, numpy, six and enum34 packages used:
