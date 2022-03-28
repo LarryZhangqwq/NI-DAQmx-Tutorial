@@ -14,6 +14,8 @@
 * [NI Hardware and Operating System Compatibility](https://www.ni.com/r/hw-support) for which versions of the driver support your hardware on a given operating system.( Win and Linux )
 * https://www.ni.com/documentation/en/ni-daqmx/20.1/manual/manual-overview/ ( Given by Sen Yang )
 
+* https://nidaqmx-python.readthedocs.io/en/latest/ NI-DAQmx Python Documentation
+
 ## 1. Installation
 
 * Running **nidaqmx** requires NI-DAQmx or NI-DAQmx Runtime.
