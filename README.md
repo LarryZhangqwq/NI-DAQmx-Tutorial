@@ -16,6 +16,8 @@
 
 * https://nidaqmx-python.readthedocs.io/en/latest/ NI-DAQmx Python Documentation
 
+* https://wiki.freepascal.org/NI-DAQmx_and_NI-DAQmx_Base_examples example of NI-DAQmx
+
 ## 1. Installation
 
 * Running **nidaqmx** requires NI-DAQmx or NI-DAQmx Runtime.
@@ -38,3 +40,54 @@
 
 * Refer to the [NI-DAQmx Help](http://digital.ni.com/express.nsf/bycode/exagg4) for API-agnostic information about NI-DAQmx or measurement concepts.
 
+
+
+## 3. **API Reference:**
+
+* nidaqmx.constants
+* nidaqmx.errors
+* nidaqmx.scale
+* nidaqmx.stream_readers
+* nidaqmx.stream_writers
+* nidaqmx.system
+  * nidaqmx.system.collection
+    * nidaqmx.system.device_collection
+    * nidaqmx.system.persisted_channel_collection
+    * nidaqmx.system.persisted_scale_collection
+    * nidaqmx.system.physical_channel_collection
+  * nidaqmx.system.device
+  * nidaqmx.system.physical_channel
+  * nidaqmx.system.storage
+    * nidaqmx.system.persisted_channel
+    * nidaqmx.system.persisted_scale
+    * nidaqmx.system.persisted_task
+  * nidaqmx.system.watchdog
+    * nidaqmx.system.expiration_state
+    * nidaqmx.system.expiration_state_collection
+* nidaqmx.task
+  * nidaqmx.task.channel
+    * nidaqmx.task.ai_channel
+    * nidaqmx.task.ao_channel
+    * nidaqmx.task.ci_channel
+    * nidaqmx.task.co_channel
+    * nidaqmx.task.di_channel
+    * nidaqmx.task.do_channel
+  * nidaqmx.task.channel_collection
+    * nidaqmx.task.ai_channel_collection
+    * nidaqmx.task.ao_channel_collection
+    * nidaqmx.task.ci_channel_collection
+    * nidaqmx.task.co_channel_collection
+    * nidaqmx.task.di_channel_collection
+    * nidaqmx.task.do_channel_collection
+  * nidaqmx.task.export_signals
+  * nidaqmx.task.in_stream
+  * nidaqmx.task.out_stream
+  * nidaqmx.task.timing
+  * nidaqmx.task.triggers
+    * nidaqmx.task.arm_start_trigger
+    * nidaqmx.task.handshake_trigger
+    * nidaqmx.task.pause_trigger
+    * nidaqmx.task.reference_trigger
+    * nidaqmx.task.start_trigger
+  * nidaqmx.types
+  * nidaqmx.untils
