@@ -32,7 +32,7 @@ Measurement＆Automation Explorer (MAX)和DAQ助手是随NI-DAQmx自动安装的
 
 ### 1.1 测量系统概述－硬件和NI-DAQmx
 
-<img src="/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-9D481B1D-EACA-4873-8632-99D6F735613E-5.5x8.5 - a5.png" alt="GUID-9D481B1D-EACA-4873-8632-99D6F735613E-5.5x8.5 - a5" style="zoom: 67%;" />
+<img src="/image/GUID-9D481B1D-EACA-4873-8632-99D6F735613E-5.5x8.5 - a5.png" alt="GUID-9D481B1D-EACA-4873-8632-99D6F735613E-5.5x8.5 - a5" style="zoom: 67%;" />
 
 NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（例如，配置、采集、生成和发送数据至NI测量设备）。使用NI-DAQmx可节省编程时间。应用程序（例如，LabVIEW、LabWindows™/CVI™和Measurement Studio）发送命令至驱动软件。例如，获取和返回热偶的读取值并显示和分析得到的数据。
 
@@ -40,7 +40,7 @@ NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（�
 
 ### 1.2 信号类型
 
-![GUID-20D703F9-19D5-4B1D-88DC-04281846846B-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-20D703F9-19D5-4B1D-88DC-04281846846B-5.5x8.5 - a5.png)
+![GUID-20D703F9-19D5-4B1D-88DC-04281846846B-5.5x8.5 - a5](/image/GUID-20D703F9-19D5-4B1D-88DC-04281846846B-5.5x8.5 - a5.png)
 
 #### 1.2.1 模拟信号连接注意事项
 
@@ -63,7 +63,7 @@ NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（�
 
 通过增大信号相对于噪声的幅度，提高数字化信号的精度。使最大电压变化等于ADC或数字化仪的最大输入范围，可获得尽可能高的准确性。系统应通过最接近信号源的测量设备放大低电平信号。
 
-#### ![GUID-3865E721-F72F-46FF-8CF2-512BB75F12F4-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-3865E721-F72F-46FF-8CF2-512BB75F12F4-5.5x8.5 - a5.png)
+#### ![GUID-3865E721-F72F-46FF-8CF2-512BB75F12F4-5.5x8.5 - a5](/image/GUID-3865E721-F72F-46FF-8CF2-512BB75F12F4-5.5x8.5 - a5.png)
 
 如通过测量设备放大信号，则测量和数字化的信号中可能包含由导线引入的噪声。在接近信号源的位置通过SCXI模块放大信号，可减少噪声对被测信号的影响。
 
@@ -91,7 +91,7 @@ NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（�
 
 通常，控制应用中包含一个或多个需控制的过程变量（例如，温度）。传感器可测量动态系统中的过程变量并为应控制应用提供数据。设定点为过程变量要达到的值。比较器可判断过程变量和设定点之间的差。如差不为零且系统判断该值足够大， 补偿器可处理该值并通过执行器的输出驱动系统接近设定点。
 
-![GUID-74BFB5ED-CE8E-4CB7-8436-830393A22A26-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-74BFB5ED-CE8E-4CB7-8436-830393A22A26-5.5x8.5 - a5.png)
+![GUID-74BFB5ED-CE8E-4CB7-8436-830393A22A26-5.5x8.5 - a5](/image/GUID-74BFB5ED-CE8E-4CB7-8436-830393A22A26-5.5x8.5 - a5.png)
 
 #### 1.5.1 比例积分微分(PID)
 
@@ -109,7 +109,7 @@ NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（�
 
 #### 1.5.4 控制应用中的抖动
 
-对于控制应用，循环时间与期望时间的差称为抖动。循环时间与期望时间差的最大值称为最大抖动。<img src="/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-50BF3221-1F1B-4804-8623-CABB7E7FE044-5.5x8.5 - a5.png" alt="GUID-50BF3221-1F1B-4804-8623-CABB7E7FE044-5.5x8.5 - a5" style="zoom:50%;" />
+对于控制应用，循环时间与期望时间的差称为抖动。循环时间与期望时间差的最大值称为最大抖动。<img src="/image/GUID-50BF3221-1F1B-4804-8623-CABB7E7FE044-5.5x8.5 - a5.png" alt="GUID-50BF3221-1F1B-4804-8623-CABB7E7FE044-5.5x8.5 - a5" style="zoom:50%;" />
 
 实时系统中的抖动是固定的。例如，安全气囊必须在碰撞发生后的1秒内打开，因此最大抖动为固定值。非实时系统中的抖动不是固定的，变化范围较大。例如，等待公交车。按照计划，公交车应在上午11:00到达，但实际到达时间第一天为上午11:05，第二天为上午11:30，第三天无法到达。对公交车的延误时间没有限制。
 
