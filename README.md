@@ -89,5 +89,5 @@
     * nidaqmx.task.pause_trigger
     * nidaqmx.task.reference_trigger
     * nidaqmx.task.start_trigger
-  * nidaqmx.types
-  * nidaqmx.untils
+* nidaqmx.types
+* nidaqmx.untils
