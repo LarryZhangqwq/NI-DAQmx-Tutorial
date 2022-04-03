@@ -387,6 +387,56 @@ NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（�
 - **就绪**—如应用程序通过反复开始和停止一个任务进行多采样测量或生成，请显式将任务转入“就绪”状态。独占性地使任务进入“就绪”状态，需占用任务的资源，并改变这些资源的一些设置。独占性地使任务进入“就绪”状态，这些操作仅进行一次，而不是每次任务开始均进行一次操作，以减少开始任务所需的时间。例如，如应用程序重复进行有限次硬件定时测量，在重复进行测量之前使任务进入“就绪”状态，开始任务所需的事件就会明显减少。如要在任务停止后继续读取额外样本，也需要使任务进入“就绪”状态。关于更多信息，见使用“开始任务”函数/VI。
 - **开始**—如任务反复进行读取或写入操作，显式地开始该任务。开始任务即保留了任务相关的资源，改变某些资源的相关设置，以及开始进行指定操作。显式开始任务时，这些操作仅进行一次，而不是每次读取或写入操作时都保留一次资源。该过程可显著减少进行读取或写入操作所需的时间。例如，如应用程序反复进行单点软件定时读取操作，如进行反复读取操作之前显式地开始任务，每次读取操作所需的时间会明显减少。
 
+#### 2.1.3 使用DAQ助手创建通道和任务
+
+可从NI应用软件或MAX中打开DAQ助手。DAQ助手是用于配置通道、任务和换算的图形化界面。
+
+打开DAQ助手之后，按照向导的说明创建任务或通道。向导完成后，可配置测量的换算，如果必要，还可配置定时和触发。
+
+**相关主题**
+
+[选择使用API或DAQ助手](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/mxcncpts/daqversusapi/)
+
+**LabVIEW: **
+
+在LabVIEW中，有若干种方法可以打开DAQ助手。常见的方法有下列几种：
+
+- 从Express输入选板种选择DAQ助手Express VI。
+- 使用DAQmx任务名称控件打开DAQ助手。
+- 按照*LabVIEW帮助*中的*NI-DAQmx与LabVIEW项目的配合使用*，在LabVIEW项目中打开DAQ助手。
+
+**LabWindows/CVI: **
+
+在LabWindows/CVI中，选择**Tools»Create/Edit DAQmx Tasks**。单击DAQmx LoadTask函数选板的**Task Name**控件，选择**New Task**，打开DAQ助手。
+
+**Measurement Studio:**
+
+在Measurement Studio中，打开Visual Studio .NET并选择**Project»Add New Item**打开Add New Item对话框。在Categories栏中选择**Measurement Studio»Assistants**。在Templates栏中选择**DAQmx Task Class**。
+
+**MAX:**
+
+在MAX中，右键单击**数据邻居**并从快捷菜单中选择**新建**。在**新建**窗口选择**NI-DAQmx任务**或**NI-DAQmx全局虚拟通道**，然后单击**下一步**。
+
+**Signal Express:**
+
+在SignalExpress中，添加DAQmx Acquire或DAQmx Generate步骤。
+
+#### 2.1.4 选择使用API或DAQ助手
+
+创建一个新的应用程序时，可选择使用DAQ助手或API。
+
+**使用DAQ助手的优点：**
+
+- 无需编程。只需交互地配置通道、定时、触发和换算。
+- DAQ助手缩短了开发时间。几分钟就可完成一个应用程序。
+- 如通过DAQ助手创建了一个应用程序，后又需要其一些隐藏的功能，可从NI的应用程序开发环境（LabVIEW、LabWindows/CVI或Measurement Studio）中基于DAQ助手，生成等效的API代码。
+
+**使用API的优点：**
+
+- API中具有DAQ助手中隐藏的一些高级功能。
+- API具有更好的灵活性，用户可基于实际需要使用API自定义应用程序。
+- API能更好地控制应用程序的性能。
+
 ### 2.2 定时和触发
 
 
