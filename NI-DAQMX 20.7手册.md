@@ -32,7 +32,7 @@ Measurement＆Automation Explorer (MAX)和DAQ助手是随NI-DAQmx自动安装的
 
 ### 1.1 测量系统概述－硬件和NI-DAQmx
 
-<img src="/image/GUID-9D481B1D-EACA-4873-8632-99D6F735613E-5.5x8.5 - a5.png" alt="GUID-9D481B1D-EACA-4873-8632-99D6F735613E-5.5x8.5 - a5" style="zoom: 67%;" />
+<img src="image/GUID-9D481B1D-EACA-4873-8632-99D6F735613E-5.5x8.5 - a5.png" alt="GUID-9D481B1D-EACA-4873-8632-99D6F735613E-5.5x8.5 - a5" style="zoom: 67%;" />
 
 NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（例如，配置、采集、生成和发送数据至NI测量设备）。使用NI-DAQmx可节省编程时间。应用程序（例如，LabVIEW、LabWindows™/CVI™和Measurement Studio）发送命令至驱动软件。例如，获取和返回热偶的读取值并显示和分析得到的数据。
 
@@ -40,7 +40,7 @@ NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（�
 
 ### 1.2 信号类型
 
-<img src="/image/GUID-20D703F9-19D5-4B1D-88DC-04281846846B-5.5x8.5 - a5.png" alt="GUID-20D703F9-19D5-4B1D-88DC-04281846846B-5.5x8.5 - a5." style="zoom: 100%;" />
+<img src="image/GUID-20D703F9-19D5-4B1D-88DC-04281846846B-5.5x8.5 - a5.png" alt="GUID-20D703F9-19D5-4B1D-88DC-04281846846B-5.5x8.5 - a5." style="zoom: 100%;" />
 
 #### 1.2.1 模拟信号连接注意事项
 
@@ -63,7 +63,7 @@ NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（�
 
 通过增大信号相对于噪声的幅度，提高数字化信号的精度。使最大电压变化等于ADC或数字化仪的最大输入范围，可获得尽可能高的准确性。系统应通过最接近信号源的测量设备放大低电平信号。
 
-<img src="/image/GUID-3865E721-F72F-46FF-8CF2-512BB75F12F4-5.5x8.5 - a5.png" alt="GUID-3865E721-F72F-46FF-8CF2-512BB75F12F4-5.5x8.5 - a5." style="zoom: 100%;" />
+<img src="image/GUID-3865E721-F72F-46FF-8CF2-512BB75F12F4-5.5x8.5 - a5.png" alt="GUID-3865E721-F72F-46FF-8CF2-512BB75F12F4-5.5x8.5 - a5." style="zoom: 100%;" />
 
 如通过测量设备放大信号，则测量和数字化的信号中可能包含由导线引入的噪声。在接近信号源的位置通过SCXI模块放大信号，可减少噪声对被测信号的影响。
 
@@ -109,7 +109,7 @@ NI-DAQmx驱动软件中包含的应用软件可用于对NI测量设备编程（�
 
 #### 1.5.4 控制应用中的抖动
 
-对于控制应用，循环时间与期望时间的差称为抖动。循环时间与期望时间差的最大值称为最大抖动。<img src="/image/GUID-50BF3221-1F1B-4804-8623-CABB7E7FE044-5.5x8.5 - a5.png" alt="GUID-50BF3221-1F1B-4804-8623-CABB7E7FE044-5.5x8.5 - a5" style="zoom:50%;" />
+对于控制应用，循环时间与期望时间的差称为抖动。循环时间与期望时间差的最大值称为最大抖动。<img src="image/GUID-50BF3221-1F1B-4804-8623-CABB7E7FE044-5.5x8.5 - a5.png" alt="GUID-50BF3221-1F1B-4804-8623-CABB7E7FE044-5.5x8.5 - a5" style="zoom:50%;" />
 
 实时系统中的抖动是固定的。例如，安全气囊必须在碰撞发生后的1秒内打开，因此最大抖动为固定值。非实时系统中的抖动不是固定的，变化范围较大。例如，等待公交车。按照计划，公交车应在上午11:00到达，但实际到达时间第一天为上午11:05，第二天为上午11:30，第三天无法到达。对公交车的延误时间没有限制。
 
@@ -603,7 +603,7 @@ NI-DAQmx控制的设备进行的动作，称为操作。常见的操作包括生
 
 参考触发在一组输入采样中创建参考点。可将该触发配置为在一个数字边沿、数字信号、模拟边沿或模拟信号进入或离开窗体区域时发生。在参考点前采集的数据为预触发数据。在参考点前采集的数据为预触后数据。
 
-![GUID-617DB6FC-57B7-426F-82C7-CD90EBE741E5-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-617DB6FC-57B7-426F-82C7-CD90EBE741E5-5.5x8.5 - a5.png)
+![GUID-617DB6FC-57B7-426F-82C7-CD90EBE741E5-5.5x8.5 - a5](image/GUID-617DB6FC-57B7-426F-82C7-CD90EBE741E5-5.5x8.5 - a5.png)
 
 ##### 2.2.2.7 开始触发
 
@@ -619,23 +619,23 @@ NI-DAQmx控制的设备进行的动作，称为操作。常见的操作包括生
 
 在下图中，当信号达到3.2时，触发被设置为捕捉上升沿信号的数据。
 
-![GUID-7089A4AE-6509-44C7-88E2-4107C85A2812-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-7089A4AE-6509-44C7-88E2-4107C85A2812-5.5x8.5 - a5.png)
+![GUID-7089A4AE-6509-44C7-88E2-4107C85A2812-5.5x8.5 - a5](image/GUID-7089A4AE-6509-44C7-88E2-4107C85A2812-5.5x8.5 - a5.png)
 
 滞后在触发基准之上或之下加窗，通常用于减少信号中噪声或毛刺造成的伪触发。如在上升斜坡使用滞后窗，当信号低于**电平**（或**阈值电平**）减去**滞后**并越过**电平**，触发置为有效。当信号低于**电平**减去**滞后**时，触发置为无效。
 
 例如，添加大小为1的**滞后**到上一个使用3.2**电平**值的范例，信号必须在等于或小于2.2处才能开始触发。当信号高于3.2时，触发置为有效；信号低于2.2时，触发置为无效。
 
-![GUID-1119E349-ECE0-4E44-AAD6-0F2F25BAE19D-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-1119E349-ECE0-4E44-AAD6-0F2F25BAE19D-5.5x8.5 - a5.png)
+![GUID-1119E349-ECE0-4E44-AAD6-0F2F25BAE19D-5.5x8.5 - a5](image/GUID-1119E349-ECE0-4E44-AAD6-0F2F25BAE19D-5.5x8.5 - a5.png)
 
 如在下降斜坡使用滞后窗，当信号高于**电平**（或**阈值电平**）加上滞后并越过**电平**，触发置为有效。当信号高于**电平**加上**滞后**时，触发置为无效。如果改为在3.2下降沿触发且滞后为1，信号必须在等于或高于4.2处开始，然后降至低于3.2以开始触发。当信号低于3.2时，触发置为有效；信号高于4.2时，触发置为无效。
 
-![GUID-2BC989E6-6611-4990-8283-C79FDDA73E8D-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-2BC989E6-6611-4990-8283-C79FDDA73E8D-5.5x8.5 - a5.png)
+![GUID-2BC989E6-6611-4990-8283-C79FDDA73E8D-5.5x8.5 - a5](image/GUID-2BC989E6-6611-4990-8283-C79FDDA73E8D-5.5x8.5 - a5.png)
 
 ###### 2.2.2.8.2 模拟电平触发
 
 模拟电平触发类似于模拟边沿触发。无论是哪种触发，都需指定边沿（上升沿或下降沿）和触发电平。模拟边沿触发关注触发条件满足时的点。模拟电平触发关注信号位于触发电平之上或之下的*持续时间*。**模拟电平触发通常用作暂停触发**。暂停触发在触发条件满足时置动作有效或无效。下图显示了当信号超过触发电平时触发生效和信号低于触发电平时触发失效的两个过程。触发失效类似于暂停触发。
 
-![GUID-DF2CE9B5-462D-4A9F-BB30-4D6F9E49E64A-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-DF2CE9B5-462D-4A9F-BB30-4D6F9E49E64A-5.5x8.5 - a5.png)
+![GUID-DF2CE9B5-462D-4A9F-BB30-4D6F9E49E64A-5.5x8.5 - a5](image/GUID-DF2CE9B5-462D-4A9F-BB30-4D6F9E49E64A-5.5x8.5 - a5.png)
 
 ###### 2.2.2.8.3 模拟多边沿触发
 
@@ -645,11 +645,11 @@ NI-DAQmx控制的设备进行的动作，称为操作。常见的操作包括生
 
 窗触发在模拟信号进入或离开两个电压值定义的窗时发生。设置窗的上限值和下限值指定窗的上下沿。下图显示了信号进窗后开始采集数据的触发。
 
-![GUID-B6AC9687-2846-4937-BD00-41E17D1C32F6-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-B6AC9687-2846-4937-BD00-41E17D1C32F6-5.5x8.5 - a5.png)
+![GUID-B6AC9687-2846-4937-BD00-41E17D1C32F6-5.5x8.5 - a5](image/GUID-B6AC9687-2846-4937-BD00-41E17D1C32F6-5.5x8.5 - a5.png)
 
 下图显示了信号离开窗后开始采集数据的触发。
 
-![GUID-6E25E6DB-BAF5-427D-967C-29A4779B545A-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-6E25E6DB-BAF5-427D-967C-29A4779B545A-5.5x8.5 - a5.png)
+![GUID-6E25E6DB-BAF5-427D-967C-29A4779B545A-5.5x8.5 - a5](image/GUID-6E25E6DB-BAF5-427D-967C-29A4779B545A-5.5x8.5 - a5.png)
 
 ###### 2.2.2.8.5 数字边沿触发
 
@@ -657,7 +657,7 @@ NI-DAQmx控制的设备进行的动作，称为操作。常见的操作包括生
 
 下图显示了数字触发信号下降沿后开始的采集。一般情况下，数字触发信号连接至测量设备的PFI管脚。
 
-![GUID-394FA00F-F0B9-412A-B5F7-64C2254E647F-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-394FA00F-F0B9-412A-B5F7-64C2254E647F-5.5x8.5 - a5.png)
+![GUID-394FA00F-F0B9-412A-B5F7-64C2254E647F-5.5x8.5 - a5](image/GUID-394FA00F-F0B9-412A-B5F7-64C2254E647F-5.5x8.5 - a5.png)
 
 ###### 2.2.2.8.6 数字电平触发
 
@@ -678,7 +678,7 @@ NI-DAQmx控制的设备进行的动作，称为操作。常见的操作包括生
 
 例如，如指定数字信号模式为"X11100"，源为"dev1/line0:4,dev1/line6,"，当物理通道"dev1/line1"、"dev1/line2"和"dev1/line3"为逻辑高，"dev1/line4"和"dev1/line6"是逻辑低时，发生模式匹配。"dev1/line0"被忽略。
 
-![GUID-E2F09938-9837-4F02-8F79-9954BA7A20FC-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-E2F09938-9837-4F02-8F79-9954BA7A20FC-5.5x8.5 - a5.png)
+![GUID-E2F09938-9837-4F02-8F79-9954BA7A20FC-5.5x8.5 - a5](image/GUID-E2F09938-9837-4F02-8F79-9954BA7A20FC-5.5x8.5 - a5.png)
 
 对于端口上的模式触发，模式匹配按相反的顺序发生。例如，如指定数字信号模式为"11000000"，源为"dev1/port0"，当物理通道"dev1/line0"和"dev1/line1"为逻辑高，其他6条线为逻辑低时，发生模式匹配。
 
