@@ -1770,15 +1770,118 @@ OUT接线端输出一个脉冲或脉冲序列。
 
 #### 2.6.2 接线端名称
 
-##### 2.6.2.1 
+| 接线端名称                                                   | 解释                                                         |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| OnboardClock                                                 | 设备上接线端的别名，设备时钟的默认源可找到。如应用程序不设置时钟源（使用空字符串作为源），将使用板载时钟。例如，模拟输入采样时钟的板载时钟为模拟输入采样时钟时基。 |
+| PFI*n*                                                       | **可编程函数接口**－指通用输入接线端，专用输出接线端。固定输出信号的名称通常位于接线端旁的I/O连接器上，作为提示。 |
+| PXI_Trig*n*                                                  | **PXI触发总线**－通用输入/输出线。                           |
+| RTSI*n*                                                      | **实时系统集成总线**－通用输入/输出线。RTSI7除外。RTSI7用于20 MHz时基信号。 |
+| ai/SampleClock                                               | 设备上模拟输入采样时钟的接线端。                             |
+| ai/StartTrigger                                              | 设备上模拟输入开始触发的接线端。                             |
+| ai/ReferenceTrigger                                          | 设备上模拟输入参考触发的接线端。                             |
+| ao/SampleClock                                               | 设备上模拟输出采样时钟的接线端。                             |
+| ao/StartTrigger                                              | 设备上模拟输出开始触发的接线端。                             |
+| 20MHzTimebase                                                | 设备上主时基板载时钟源的接线端。                             |
+| di/SampleClock                                               | 设备上数字输入采样时钟的接线端。                             |
+| do/SampleClock                                               | 设备上数字输出采样时钟的接线端。                             |
+| di/ReferenceTrigger                                          | 设备上数字输入参考触发的接线端。                             |
+| 80MHzTimebase                                                | 设备上主时基板载时钟源的接线端。                             |
+| 100MHzTimebase                                               | 设备上主时基板载时钟源的接线端。                             |
+| MasterTimebase                                               | 设备上主时基信号的接线端。该信号来自20MHzTimebase接线端或RTSI7接线端。该信号时采样时钟时基的板载时钟源，也可能是模拟输入转换时钟时基的源。 |
+| 100kHzTimebase                                               | 设备上100 kHz时基信号的接线端。该信号通过将20MHzTimebase接线端信号除以200得到，是采样时钟时基的源之一。 |
+| ai/ConvertClock                                              | 设备上模拟输入转换时钟的接线端。                             |
+| ai/ConvertClockTimebase                                      | 设备上模拟输入转换时钟时基的接线端。是模拟输入转换时钟的板载时钟源。 |
+| ai/HoldCompleteEvent                                         | 设备上模拟输入保持完成事件信号的接线端。                     |
+| AIHoldComplete                                               | I/O连接器（设备之外）上模拟输入保持完成事件信号的接线端。    |
+| ai/PauseTrigger                                              | 设备上模拟输入暂停触发的接线端。                             |
+| ai/SampleClockTimebase                                       | 设备上模拟输入采样时钟时基的接线端。是模拟输入采样时钟的板载时钟源。 |
+| AnalogComparisonEvent                                        | 设备上模拟比较电路输出、模拟比较事件信号的接线端。模拟边沿或窗触发配置后，该电路即有效。 |
+| ao/PauseTrigger                                              | 设备上模拟输出暂停触发的接线端。                             |
+| ao/SampleClockTimebase                                       | 设备上模拟输出采样时钟时基的接线端。是模拟输出采样时钟的板载时钟源。 |
+| di/SampleClockTimebase                                       | 设备上数字输入采样时钟时基的接线端。是数字输入采样时钟的板载时钟源。 |
+| do/SampleClockTimebase                                       | 设备上数字输出采样时钟时基的接线端。是数字输出采样时钟的板载时钟源。 |
+| Ctr0Out, Ctr1Out, Ctr2Out, Ctr3Out                           | I/O连接器上计数器0、1、2、3输出信号的接线端。也可使用Ctr0Out作为发送外部信号至RTSI总线的接线端。 |
+| Ctr0Gate, Ctr1Gate, Ctr2Gate, Ctr3Gate                       | 设备上用途取决于应用程序的接线端。关于如何在应用程序中使用门限信号的详细信息，见NI-DAQmx中计数器的组成。 |
+| Ctr0Source, Ctr1Source, Ctr2Source, Ctr3Source               | 设备上用途取决于应用程序的接线端。关于如何在应用程序中使用源信号的详细信息，见NI-DAQmx中计数器的组成。 |
+| Ctr0InternalOutput, Ctr1InternalOutput, Ctr2InternalOutput, Ctr3InternalOutput | 设备上选择计数器输出方式（脉冲输出，切换输出）的接线端。关于内部输出接线端的详细信息，见NI-DAQmx中计数器的组成。 |
+| PairedCtrInternalOutput                                      | 设备上将计数器连接成对，不使用任何外部连线。设备上计数器链的接线端。如应用程序使用计数器0，PairedCtrInternalOutput指计数器1的输出。如应用程序使用计数器1，PairedCtrInternalOutput指计数器0的输出。 |
+| PairedCtrOutputPulse                                         | 设备上将计数器连接起来，不使用任何外部连线。设备上计数器链的接线端。如配置计数器0，PairedCtrOutputPulse指计数器1的输出。如配置计数器1，PairedCtrOutputPulse指计数器0的输出。详细信息，见成对计数器。当计数器达到计数器计数上限（向下计数时，上限为0；向上计数时，上限为计数最大值），PairedCtrOutputPulse的输出会在上限折返计数。使用该接线端可将计数器连接起来创建一个更大的计数器，将其他计数器作为时钟源进行缓冲边沿计数，进行有限脉冲序列生成，以及创建自定义应用程序。 |
+| di/ChangeDetectionEvent                                      | 设备上检测边沿事件发生的接线端。                             |
+| FrequencyOutput                                              | 频率输出信号的接线端，用于生成一个脉冲序列。                 |
+| SyncPulse                                                    | 设备上同步脉冲信号的接线端。用于同步DSA设备。                |
+| Ctr0StartArmTrigger                                          | 设备上发送开始触发的接线端。                                 |
+| Ctr0Aux, Ctr1Aux                                             | 设备上用途取决于应用程序的接线端。关于如何在应用程序中使用辅助信号的详细信息，见NI-DAQmx中计数器的组成。 |
+| Ctr0A, Ctr1A, Ctr2A, Ctr3A                                   | 用于位置测量的接线端。                                       |
+| Ctr0B, Ctr1B, Ctr2B, Ctr3B                                   | 用于位置测量的接线端。                                       |
+| Ctr0Z, Ctr1Z, Ctr2Z, Ctr3Z                                   | 用于位置测量的接线端。                                       |
+| port[0..2]line[0..3]                                         | C系列设备上用作触发、时钟和时基连线的接线端。这些接线端不可用于数字I/O。 |
+| te0/StartTrigger, te1/StartTrigger                           | 设备上定时引擎开始触发的接线端。                             |
+| te0/ReferenceTrigger, te1/ReferenceTrigger                   | 设备上定时引擎参考触发的接线端。                             |
+| te0/SyncPulse, te1/SyncPulse                                 | 设备上定时引擎同步脉冲信号的接线端。用于同步DSA设备。        |
+| te0/SampleClock, te1/SampleClock                             | 设备上定时引擎采样时钟的接线端。                             |
+| it0/SampleClock, it1/SampleClock, it2/SampleClock, it3/SampleClock, it4/SampleClock, it5/SampleClock, it6/SampleClock, it7/SampleClock | 设备上输入定时引擎采样时钟的接线端。                         |
+| it0/StartTrigger, it1/StartTrigger, it2/StartTrigger, it3/StartTrigger, it4/StartTrigger, it5/StartTrigger, it6/StartTrigger, it7/StartTrigger | 设备上输入定时引擎开始触发的接线端。                         |
+| it0/ReferenceTrigger, it1/ReferenceTrigger, it2/ReferenceTrigger, it3/ReferenceTrigger, it4/ReferenceTrigger, it5/ReferenceTrigger, it6/ReferenceTrigger, it7/ReferenceTrigger | 设备上输入定时引擎参考触发的接线端。                         |
+| it0/PauseTrigger, it1/PauseTrigger, it2/PauseTrigger, it3/PauseTrigger, it4/PauseTrigger, it5/PauseTrigger, it6/PauseTrigger, it7/PauseTrigger | 设备上输入暂停触发的接线端。                                 |
+| it0/SampleClockTimebase, it1/SampleClockTimebase, it2/SampleClockTimebase, it3/SampleClockTimebase, it4/SampleClockTimebase, it5/SampleClockTimebase, it6/SampleClockTimebase, it7/SampleClockTimebase | 设备上输入采样时钟时基的接线端。是输入采样时钟的板载时钟源。 |
+| ot0/SampleClock, ot1/SampleClock, ot2/SampleClock, ot3/SampleClock, ot4/SampleClock, ot5/SampleClock, ot6/SampleClock, ot7/SampleClock | 设备上输出定时引擎采样时钟的接线端。                         |
+| ot0/StartTrigger, ot1/StartTrigger, ot2/StartTrigger, ot3/StartTrigger, ot4/StartTrigger, ot5/StartTrigger, ot6/StartTrigger, ot7/StartTrigger | 设备上输出定时引擎开始触发的接线端。                         |
+| ot0/PauseTrigger, ot1/PauseTrigger, ot2/PauseTrigger, ot3/PauseTrigger, ot4/PauseTrigger, ot5/PauseTrigger, ot6/PauseTrigger, ot7/PauseTrigger | 设备上输出暂停触发的接线端。                                 |
+| ot0/SampleClockTimebase, ot1/SampleClockTimebase, ot2/SampleClockTimebase, ot3/SampleClockTimebase, ot4/SampleClockTimebase, ot5/SampleClockTimebase, ot6/SampleClockTimebase, ot7/SampleClockTimebase | 设备上输出采样时钟时基的接线端。是输入采样时钟的板载时钟源。 |
+| cRIO_Trig0, cRIO_Trig1, cRIO_Trig2, cRIO_Trig3, cRIO_Trig4, cRIO_Trig5, cRIO_Trig6, cRIO_Trig7 | **cRIO触发总线**－通用输入/输出线，用于在cRIO机箱上共享NI-DAQmx任务和FPGA IO之间的信号。 |
 
-##### 2.6.2.2
+##### 2.6.2.1 模拟输入附件的接线端名称
 
-##### 2.6.2.3 
+| 原接线端名称  | 更新后的接线端名称 | 解释                                           |
+| :------------ | :----------------- | :--------------------------------------------- |
+| AIGND, ACHGND | AIGND              | 参考单端测量的参考点和差分测量的偏移电流返回点 |
+| ACH#          | AI#                | AI0, AI1等等，模拟输入通道                     |
+| AISENSE       | AISENSE            | 使用0-15通道的NRSE测量参考点                   |
+| AISENSE2      | AISENSE2           | 使用16-79通道的NRSE测量参考点                  |
+| AISENSE3      | AISENSE3           | 使用80-143通道的NRSE测量参考点                 |
+| AISENSE4      | AISENSE4           | 使用144-207通道的NRSE测量参考点                |
+| SCANCLK       | AI HOLD COMP       | AI保持完成事件信号出现的接线端                 |
+| TRIG1         | AI START TRIG      | 放在可省略AI开始触发的PFI接线端旁边，作为提示  |
+| TRIG2         | AI REF TRIG        | 放在可省略AI参考触发的PFI接线端旁边，作为提示  |
+| CONVERT*      | AI CONV CLK        | 放在可省略AI转换时钟的PFI接线端旁边，作为提示  |
+| STARTSCAN     | AI SAMP CLK        | 放在可省略AI采样时钟的PFI接线端旁边，作为提示  |
 
-##### 2.6.2.4 
+##### 2.6.2.2 模拟输出附件的接线端名称
 
-##### 2.6.2.5 
+| 原接线端名称 | 更新后的接线端名称 | 解释                                          |
+| :----------- | :----------------- | :-------------------------------------------- |
+| DAC0OUT      | AO0                | 模拟输出通道                                  |
+| DAC1OUT      | AO1                | 模拟输出通道                                  |
+| EXTREF       | AO EXT REF         | AO外部参考                                    |
+| AOGND        | AO GND             | 模拟输出地                                    |
+| UPDATE*      | AO SAMP CLK        | 放在可省略AO采样时钟的PFI接线端旁边，作为提示 |
+| WFTRIG       | AO START TRIG      | 放在可省略AO开始触发的PFI接线端旁边，作为提示 |
+
+##### 2.6.2.3 计数器附件接线端的名称
+
+| 原接线端名称  | 更新后的接线端名称 | 解释                                              |
+| :------------ | :----------------- | :------------------------------------------------ |
+| GPCTR1_SOURCE | CTR1SOURCE         | 放在Ctr1Source信号可省略的PFI接线端旁边，作为提示 |
+| GPCTR1_GATE   | CTR1GATE           | 放在Ctr1Gate信号可省略的PFI接线端旁边，作为提示   |
+| GPCTR1_OUT    | CTR1OUT            | Ctr1Out信号出现的接线端的名称                     |
+| GPCTR0_SOURCE | CTR0SOURCE         | 放在Ctr0Source信号可省略的PFI接线端旁边，作为提示 |
+| GPCTR0_GATE   | CTR0GATE           | 放在Ctr0Gate信号可省略的PFI接线端旁边，作为提示   |
+| GPCTR0_OUT    | CTR0OUT            | Ctr0Out信号出现的接线端的名称                     |
+| FREQ_OUT      | FREQ OUT           | 4位时钟除数信号输出接线端的名称                   |
+
+##### 2.6.2.4 数字附件接线端的名称
+
+| 原接线端名称 | 更新后的接线端名称 | 解释                                                         |
+| :----------- | :----------------- | :----------------------------------------------------------- |
+| DIO#         | P0.#               | 以数字表示的设备上的端口。例如，端口A表示为port 0。#表示一条数字线 |
+| PA#、PB#等   | P0.#、P1.#等       | 以数字表示的设备上的端口。例如，端口A表示为port 0。#表示一条数字线 |
+| DIOA#, DIOB# | P0.#、P1.#等       | #表示一条数字线                                              |
+
+##### 2.6.2.5 接线端名称语法
+
+接线端的名称是指向系统中实际接线端的唯一标识符。要保证接线端名称在多台设备上的唯一性，接线端名称以斜杠开始，其后是所在设备在MAX中的名称，例如，Dev1。后跟一个斜杠和设备标识符，例如，PFI3。例如，Dev1上的PFI3接线端是``/Dev1/PFI3``。
+
+在多个子系统或定时引擎上的接线端，接线端前必须有子系统或定时引擎的名称。例如，Dev1的模拟输入子系统Start Trigger的输出接线端为``/Dev1/ai/StartTrigger``。
 
 ### 2.7 强制转换
 
