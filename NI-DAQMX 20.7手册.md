@@ -2578,13 +2578,140 @@ NI 9361有8个计数器，支持向同一任务添加多个计数器通道。单
 
 ![GUID-5B70FC04-D5DB-4CF1-B328-6E7EEA1EDFF4-5.5x8.5 - a5](/Users/zhangyuxiang/Documents/NI-DAQmx-Tutorial/image/GUID-5B70FC04-D5DB-4CF1-B328-6E7EEA1EDFF4-5.5x8.5 - a5.png)
 
-#### 3.3.5 
+#### 3.3.5 检测不完整采样
 
-#### 3.3.6 
+当执行数字信号的带缓冲时间测量时，通常情况初始采样无效。以下设备可检测类似采样并放弃无效采样。
 
-#### 3.3.7 
+- 总线供电的M系列USB设备
+- 连接到CompactDAQ机箱[[1\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/incompletesampledetection/#note-1)、CompactDAQ控制器[[2\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/incompletesampledetection/#note-2)、CompactRIO控制器[[3\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/incompletesampledetection/#note-3)，以及 CompactRIO单板控制器[[4\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/incompletesampledetection/#note-4)的并行数字I/O模块。请参考*C系列设备的数字I/O注意事项*。
+- NI 661*x*设备
+- X系列设备
 
-#### 3.3.8 
+- [1](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/incompletesampledetection/#note_ref-1) cDAQ-9171、9174、9178、9179、9181、9184、9185、9188、9188XT、9189和9191。
+- [2](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/incompletesampledetection/#note_ref-2) cDAQ-9132、9133、9134、9135、9136和9137。
+- [3](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/incompletesampledetection/#note_ref-3) cRIO-9040、9041、9042、9043、9045、9046、9047、9048、9049、9053、9054、9055、9056、9057和9058。
+- [4](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/incompletesampledetection/#note_ref-4) sbRIO-9603、9608、9609、9628、9629和9638。
+
+#### 3.3.6 预缩放
+
+通过预换算，计数器可对频率高于计数器最大时基的信号进行计数。TIO计数器可为每个计数器提供8X和2X预换算。可以禁用预换算。每个预缩放都包含简单的小计数器，可以进行2、8计数，或复位（重新从0开始计数）。该计数器已为该应用进行专门设计，并且对信号计数的速度超过通用计数器。通用计数器中的CtrN源信号是简单计数器信号进行除法运算后得到的。
+
+预换算适用于两个计数器周期和频率测量，其中测量信号为连续重复信号。预换算计数器的值无法读取，因此用户无法知道前一次复位后的计数值。如允许出现错误（8X预换算或2X预换算分别可最多允许7个和1个错误），预换算同样可用于边沿计数。
+
+#### 3.3.7 脉冲测量支持
+
+下列设备支持脉冲测量：
+
+- 连接到CompactDAQ机箱[[1\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/pulsemeassupport/#note-1)、CompactDAQ控制器[[2\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/pulsemeassupport/#note-2)、CompactRIO控制器[[3\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/pulsemeassupport/#note-3)，以及 CompactRIO单板控制器[[4\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/pulsemeassupport/#note-4)的并行数字I/O模块。请参考*C系列设备的数字I/O注意事项*。
+- NI 661*x*设备
+- X系列设备
+
+- [1](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/pulsemeassupport/#note_ref-1) cDAQ-9171、9174、9178、9179、9181、9184、9185、9188、9188XT、9189和9191。
+- [2](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/pulsemeassupport/#note_ref-2) cDAQ-9132、9133、9134、9135、9136和9137。
+- [3](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/pulsemeassupport/#note_ref-3) cRIO-9040、9041、9042、9043、9045、9046、9047、9048、9049、9053、9054、9055、9056、9057和9058。
+- [4](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/pulsemeassupport/#note_ref-4) sbRIO-9603、9608、9609、9628、9629和9638。
+
+#### 3.3.8 用于时间测量的采样时钟定时支持
+
+下列设备可支持用于数字信号时间测量的采样时钟定时。例如，频率、周期和两边沿间隔测量。
+
+
+
+- 总线供电的M系列USB设备
+- 连接到CompactDAQ机箱[[1\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/sampleclocktimemeas/#note-1)、CompactDAQ控制器[[2\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/sampleclocktimemeas/#note-2)、CompactRIO控制器[[3\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/sampleclocktimemeas/#note-3)，以及 CompactRIO单板控制器[[4\]](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/sampleclocktimemeas/#note-4)的并行数字I/O模块。请参考*C系列设备的数字I/O注意事项*。
+- PXIe-6612和6614设备。
+- PXIe-6738和6739设备。
+- X系列设备
+
+**注**：
+
+在X系列设备中无法将采样时钟定时用于半周期测量。
+
+- [1](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/sampleclocktimemeas/#note_ref-1) cDAQ-9171、9174、9178、9179、9181、9184、9185、9188、9188XT、9189和9191。
+- [2](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/sampleclocktimemeas/#note_ref-2) cDAQ-9132、9133、9134、9135、9136和9137。
+- [3](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/sampleclocktimemeas/#note_ref-3) cRIO-9040、9041、9042、9043、9045、9046、9047、9048、9049、9053、9054、9055、9056、9057和9058。
+- [4](https://www.ni.com/documentation/zhs/ni-daqmx/20.1/devconsid/sampleclocktimemeas/#note_ref-4) sbRIO-9603、9608、9609、9628、9629和9638。
+
+### 3.4 数字滤波
+
+对于未达到指定时间的状态，数字滤波将不支持该状态转换。例如，对于带数字滤波的边沿计数测量，如脉冲宽度低于指定时间，该设备将不会计算边沿数。对于数字输入任务，只有当状态达到指定时间，该设备才可识别信号在不同状态间的转换。
+
+本章节包含用于C系列、DIO、M系列、SC Express、TIO和X系列设备的数字滤波的详细信息。
+
+#### 3.4.1 用于C列设备的数字滤波的注意事项
+
+对于C系列设备，可以过滤数字I/O线和数字输入信号。
+
+**数字I/O线的定时和触发滤波器**
+
+通过选择3个固定值（112.5 nS、6.4 µS和2.56 mS）或自定义的滤波值可配置设备的数字滤波器。设备中所有线的自定义过滤值必须相同。例如，如将过滤值2 µS用于PFI 0，设备中所有其它可过滤的线仅允许从三个固定值和自定义过滤值2 µs中进行选择。每个数字线或输入接线端均包含四个与数字滤波器关联的属性：启用数字滤波器、数字滤波器最小脉冲宽度、数字滤波器时基源和数字滤波器时基频率。
+
+将启用数字滤波器设置为真时，必须同时配置数字滤波器最小脉冲宽度属性。通过数字滤波器最小脉冲宽度属性选择滤波值时，设备使用内部的32位计数器生成所需的滤波值。如需通过外部信号生成滤波器时钟，可使用数字滤波器时基源和数字滤波器时基频率属性。必须配置两个属性以便将外部信号作为数字滤波器的源。数字滤波器最小脉冲宽度属性表示确保能够传输至设备的最小值。确保被设备阻止的最大脉冲为确保可通过滤波器的最小脉冲宽度减去一个滤波器时钟滴答。
+
+下表列出可数字滤波的接线端的属性。
+
+
+
+| 类型                               | 属性               |
+| :--------------------------------- | :----------------- |
+| 通道                               | 频率输入接线端     |
+| 周期输入接线端                     |                    |
+| 计数边沿输入接线端                 |                    |
+| 计数边沿计数方向                   |                    |
+| 位置A输入接线端                    |                    |
+| 位置B输入接线端                    |                    |
+| 位置Z输入接线端                    |                    |
+| 脉冲输入接线端（时间、滴答和频率） |                    |
+| 脉冲宽度输入接线端                 |                    |
+| 两边沿第一个输入接线端             |                    |
+| 两边沿第二个输入接线端             |                    |
+| 半周期输入接线端                   |                    |
+| 计数器输入时基源（仅外部）         |                    |
+| 计数器输出时基源（仅外部）         |                    |
+| 定时                               | 采样时钟源         |
+| 触发                               | 开始就绪数字边沿源 |
+| 暂停模拟电平源                     |                    |
+| 暂停模拟窗源                       |                    |
+| 暂停数字电平源                     |                    |
+| 参考模拟边沿源                     |                    |
+| 参考模拟窗源                       |                    |
+| 参考数字边沿源                     |                    |
+| 开始模拟边沿源                     |                    |
+| 开始模拟窗源                       |                    |
+| 开始数字边沿源                     |                    |
+
+**数字输入信号的滤波**
+
+滤波器在数字输入线上也可用（例如，cDAQ1Mod1/port0/line0），但滤波器不支持之前提到的固定大小的或外部时基源。数组输入线的最小滤波器脉冲宽度为50 nS，且可被设置为以25 nS递增。模块上的全部数字输入线均使用同一个最小滤波器脉冲宽度。确保能够被滤波器阻止的最大脉冲宽度为确保通过滤波器的脉冲宽度的一半。
+
+滤波器电路在机箱上，并行数字模块上的所有数字线都可以使用滤波器。对于并行数字模块，模块和机箱背板的输入输出数据通过并行方式交换，而不是以串行方式交换。
+
+**C系列并行数字输入模块**
+
+- NI 9344
+- NI 9401
+- NI 9402
+- NI 9411
+- NI 9421
+- NI 9422
+- NI 9423
+- NI 9435
+- NI 9436
+- NI 9437
+
+#### 3.4.2 FieldDAQ滤波
+
+FD-11601、FD-11603、FD-11605、FD-11634和FD-11637通过滤波可精确表示带内信号并抑制带外信号。滤波器基于信号的频率范围或带宽来区分信号。使用AI.Filter.Enable DAQmx通道属性启用或禁用滤波器。然后，可指定中心或截止频率(AI.Filter.Freq)和滤波器阶数(AI.Filter.Order)，并选择矩形(Brickwall)、Butterworth或梳状滤波器响应(AI.Filter.Response)。该滤波器选择将被应用于组内的全部通道。
+
+关于滤波的详细信息，见设备的用户指南。
+
+#### 3.4.3 NI 9202、NI 9252、NI 9253滤波
+
+NI 9202、NI 9252和NI 9253通过模拟滤波和数字滤波，可精确表示带内信号并抑制带外信号。滤波器基于信号的频率范围或带宽来区分信号。始终启用滤波选项，滤波器配置适用于模块上的所有通道。
+
+在NI-DAQmx中，可指定中心或截止频率(AI.Filter.Freq)和滤波器阶数(AI.Filter.Order)，并选择梳状滤波器响应(AI.Filter.Response)。NI 9252/9253还提供Butterworth滤波器。
+
+关于这些设备滤波器的详细信息，请参考设备数据表。
 
 ## 4. DAQmx - 数据采集节点
 
