@@ -36,6 +36,10 @@
   $ python -m pip list
   ````
 
+* Labview download:
+
+  https://www.ni.com/zh-cn/support/downloads/software-products/download.labview.html#
+
 ## 2. Additional Documentation 
 
 * Refer to the [NI-DAQmx Help](http://digital.ni.com/express.nsf/bycode/exagg4) for API-agnostic information about NI-DAQmx or measurement concepts.
